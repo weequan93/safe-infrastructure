@@ -155,7 +155,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: safeglobal/safe-wallet-web:${UI_VERSION}
+    image: quanquanah/deriw-safeglobal-safe-wallet-web:dev
     env_file:
       - container_env_files/ui.env
     depends_on:
