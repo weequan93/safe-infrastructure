@@ -147,7 +147,7 @@ services:
     <<: *redishealthcheck
 
   cgw-web:
-    image: safeglobal/safe-client-gateway-nest:${CGW_VERSION}
+    image: quanquanah/deriw-safeglobal-safe-client-gateway:dev
     env_file:
       - container_env_files/cgw.env
     depends_on:
