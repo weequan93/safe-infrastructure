@@ -147,7 +147,7 @@ services:
     <<: *redishealthcheck
 
   cgw-web:
-    image: quanquanah/deriw-safeglobal-safe-client-gateway:dev
+    image: fuhua-container-registry.ap-southeast-1.cr.aliyuncs.com/deriw/deriw-safeglobal-safe-client-gateway
     env_file:
       - container_env_files/cgw.env
     depends_on:
@@ -155,7 +155,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: quanquanah/deriw-safeglobal-safe-wallet-web:dev
+    image: fuhua-container-registry.ap-southeast-1.cr.aliyuncs.com/deriw/deriw-safeglobal-safe-wallet-web
     env_file:
       - container_env_files/ui.env
     depends_on:
