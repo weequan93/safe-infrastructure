@@ -33,6 +33,7 @@ services:
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - nginx-shared-txs:/nginx-txs
       - nginx-shared-cfg:/nginx-cfg
+      - ./docker/ssl:/etc/ssl
     depends_on:
       - txs-web
       - cfg-web
@@ -131,11 +132,10 @@ services:
 
   # Safe Config Service
   cfg-web:
-    image: safeglobal/safe-config-service:${CFG_VERSION}
+    image: quanquanah/deriw-safeglobal-safe-config-service:dev
     tty: true
     volumes:
       - nginx-shared-cfg:/nginx
-      - ./docker/ssl:/etc/ssl
     env_file:
       - container_env_files/cfg.env
     depends_on:
