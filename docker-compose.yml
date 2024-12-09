@@ -135,6 +135,7 @@ services:
     tty: true
     volumes:
       - nginx-shared-cfg:/nginx
+      - ./docker/ssl:/etc/ssl
     env_file:
       - container_env_files/cfg.env
     depends_on:
